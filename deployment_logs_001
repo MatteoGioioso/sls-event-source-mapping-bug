@@ -1,0 +1,194 @@
+Serverless: Load command interactiveCli
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command config:tabcompletion
+Serverless: Load command config:tabcompletion:install
+Serverless: Load command config:tabcompletion:uninstall
+Serverless: Load command create
+Serverless: Load command install
+Serverless: Load command package
+Serverless: Load command deploy
+Serverless: Load command deploy:function
+Serverless: Load command deploy:list
+Serverless: Load command deploy:list:functions
+Serverless: Load command invoke
+Serverless: Load command invoke:local
+Serverless: Load command info
+Serverless: Load command logs
+Serverless: Load command metrics
+Serverless: Load command print
+Serverless: Load command remove
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command slstats
+Serverless: Load command plugin
+Serverless: Load command plugin
+Serverless: Load command plugin:install
+Serverless: Load command plugin
+Serverless: Load command plugin:uninstall
+Serverless: Load command plugin
+Serverless: Load command plugin:list
+Serverless: Load command plugin
+Serverless: Load command plugin:search
+Serverless: Load command config
+Serverless: Load command config:credentials
+Serverless: Load command rollback
+Serverless: Load command rollback:function
+Serverless: Load command upgrade
+Serverless: Load command uninstall
+Serverless: Load command login
+Serverless: Load command logout
+Serverless: Load command generate-event
+Serverless: Load command test
+Serverless: Load command dashboard
+Serverless: Load command output
+Serverless: Load command output:get
+Serverless: Load command output:list
+Serverless: Load command param
+Serverless: Load command param:get
+Serverless: Load command param:list
+Serverless: Invoke deploy
+Serverless: Invoke package
+Serverless: Invoke aws:common:validate
+Serverless: Invoke aws:common:cleanupTempDir
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+
+ Serverless Warning --------------------------------------
+
+  Function timeout setting (900) is greater than maximum allowed timeout for HTTP API endpoint (29s). This may introduce situation where endpoint times out for succesful lambda invocation.
+
+Serverless: Invoke aws:package:finalize
+Serverless: Invoke aws:common:moveArtifactsToPackage
+Serverless: Invoke aws:common:validate
+Serverless: Invoke aws:deploy:deploy
+Serverless: [AWS sts 200 1.356s 0 retries] assumeRole({
+  RoleArn: 'arn:aws:iam::0000000000:role/DeveloperCrossAccountAccessRole',
+  RoleSessionName: 'aws-sdk-js-1606202602449'
+})
+Serverless: [AWS cloudformation 200 1.396s 0 retries] describeStacks({ StackName: 'sls-event-source-mapping-bug-dev' })
+Serverless: [AWS cloudformation 200 0.243s 0 retries] describeStackResource({
+  StackName: 'sls-event-source-mapping-bug-dev',
+  LogicalResourceId: 'ServerlessDeploymentBucket'
+})
+Serverless: [AWS s3 200 0.27s 0 retries] listObjectsV2({
+  Bucket: 'sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve',
+  Prefix: 'serverless/sls-event-source-mapping-bug/dev'
+})
+Serverless: [AWS s3 200 0.233s 0 retries] headObject({
+  Bucket: 'sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve',
+  Key: 'serverless/sls-event-source-mapping-bug/dev/1606201712240-2020-11-24T07:08:32.240Z/compiled-cloudformation-template.json'
+})
+Serverless: [AWS s3 200 0.239s 0 retries] headObject({
+  Bucket: 'sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve',
+  Key: 'serverless/sls-event-source-mapping-bug/dev/1606201712240-2020-11-24T07:08:32.240Z/buggedFunction.zip'
+})
+Serverless: [AWS lambda 200 0.257s 0 retries] getFunction({ FunctionName: 'sls-event-source-mapping-bug-dev-buggedFunction' })
+Serverless: [AWS sts 200 1.214s 0 retries] getCallerIdentity({})
+Serverless: Uploading CloudFormation file to S3...
+Serverless: [AWS s3 200 0.317s 0 retries] putObject({
+  Body: <Buffer 7b 22 41 57 53 54 65 6d 70 6c 61 74 65 46 6f 72 6d 61 74 56 65 72 73 69 6f 6e 22 3a 22 32 30 31 30 2d 30 39 2d 30 39 22 2c 22 44 65 73 63 72 69 70 74 ... 3435 more bytes>,
+  Bucket: 'sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve',
+  Key: 'serverless/sls-event-source-mapping-bug/dev/1606202602703-2020-11-24T07:23:22.703Z/compiled-cloudformation-template.json',
+  ContentType: 'application/json',
+  Metadata: { filesha256: 'Ae5WT34DblJwajjvfbp1rMPh9hXISx0ADzG+l+m3NOI=' }
+})
+Serverless: Uploading artifacts...
+Serverless: Uploading service buggedFunction.zip file to S3 (2.82 KB)...
+Serverless: [AWS s3 200 0.276s 0 retries] putObject({
+  Body: <Buffer 50 4b 03 04 14 00 08 00 08 00 00 00 21 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 00 00 2e 69 64 65 61 2f 61 77 73 2e 78 6d 6c 8d 91 41 4e c3 40 0c ... 2833 more bytes>,
+  Bucket: 'sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve',
+  Key: 'serverless/sls-event-source-mapping-bug/dev/1606202602703-2020-11-24T07:23:22.703Z/buggedFunction.zip',
+  ContentType: 'application/zip',
+  Metadata: { filesha256: 'h9basn7vkg9wfg38oOVM3tKUnxoICthnpy+sowXgvV0=' }
+})
+Serverless: Validating template...
+Serverless: [AWS cloudformation 200 1.543s 0 retries] validateTemplate({
+  TemplateURL: 'https://s3.amazonaws.com/sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve/serverless/sls-event-source-mapping-bug/dev/1606202602703-2020-11-24T07:23:22.703Z/compiled-cloudformation-template.json'
+})
+Serverless: Updating Stack...
+Serverless: [AWS cloudformation 200 1.938s 0 retries] updateStack({
+  StackName: 'sls-event-source-mapping-bug-dev',
+  Capabilities: [ 'CAPABILITY_IAM', 'CAPABILITY_NAMED_IAM', [length]: 2 ],
+  Parameters: [ [length]: 0 ],
+  TemplateURL: 'https://s3.amazonaws.com/sls-event-source-mapping-serverlessdeploymentbuck-feu009g2ajve/serverless/sls-event-source-mapping-bug/dev/1606202602703-2020-11-24T07:23:22.703Z/compiled-cloudformation-template.json',
+  Tags: [ { Key: 'STAGE', Value: 'dev' }, [length]: 1 ]
+})
+Serverless: Checking Stack update progress...
+Serverless: [AWS cloudformation 200 0.37s 0 retries] describeStackEvents({
+  StackName: 'arn:aws:cloudformation:ap-southeast-1:0000000000:stack/sls-event-source-mapping-bug-dev/dd91e030-2e23-11eb-8212-06a263de321a'
+})
+..Serverless: [AWS cloudformation 200 0.316s 0 retries] describeStackEvents({
+  StackName: 'arn:aws:cloudformation:ap-southeast-1:0000000000:stack/sls-event-source-mapping-bug-dev/dd91e030-2e23-11eb-8212-06a263de321a'
+})
+..Serverless: [AWS cloudformation 200 0.301s 0 retries] describeStackEvents({
+  StackName: 'arn:aws:cloudformation:ap-southeast-1:0000000000:stack/sls-event-source-mapping-bug-dev/dd91e030-2e23-11eb-8212-06a263de321a'
+})
+..
+Serverless: Operation failed!
+Serverless: View the full error output: https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stack/detail?stackId=arn%3Aaws%3Acloudformation%3Aap-southeast-1%3A0000000000%3Astack%2Fsls-event-source-mapping-bug-dev%2Fdd91e030-2e23-11eb-8212-06a263de321a
+
+  Serverless Error ---------------------------------------
+
+  ServerlessError: An error occurred: BuggedFunctionEventSourceMappingKinesisBuggedKinesis - The event source arn (" arn:aws:kinesis:ap-southeast-1:0000000000:stream/buggedKinesis ") and function (" sls-event-source-mapping-bug-dev-buggedFunction ") provided mapping already exists. Please update or delete the existing mapping with UUID 63d82040-db27-4ae2-a58b-12e0a2700945 (Service: Lambda, Status Code: 409, Request ID: bfc6676b-f3b6-4ef5-855f-c70f1ae7cafa, Extended Request ID: null).
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/monitorStack.js:125:33
+  From previous event:
+      at AwsDeploy.monitorStack (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/monitorStack.js:28:12)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/updateStack.js:107:28
+  From previous event:
+      at AwsDeploy.update (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/updateStack.js:107:8)
+  From previous event:
+      at AwsDeploy.<anonymous> (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/updateStack.js:121:35)
+  From previous event:
+      at AwsDeploy.updateStack (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/lib/updateStack.js:117:33)
+  From previous event:
+      at AwsDeploy.<anonymous> (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/deploy/index.js:127:39)
+  From previous event:
+      at Object.aws:deploy:deploy:updateStack [as hook] (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/deploy/index.js:123:30)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:490:55
+  From previous event:
+      at PluginManager.invoke (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:490:22)
+      at PluginManager.spawn (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:510:17)
+      at AwsDeploy.<anonymous> (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/deploy/index.js:93:48)
+  From previous event:
+      at Object.deploy:deploy [as hook] (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/plugins/aws/deploy/index.js:89:30)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:490:55
+  From previous event:
+      at PluginManager.invoke (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:490:22)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:525:24
+  From previous event:
+      at PluginManager.run (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/classes/PluginManager.js:525:8)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/Serverless.js:133:33
+      at processImmediate (internal/timers.js:456:21)
+      at process.topLevelDomainCallback (domain.js:137:15)
+  From previous event:
+      at Serverless.run (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/lib/Serverless.js:120:74)
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/bin/serverless.js:82:30
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/node_modules/graceful-fs/graceful-fs.js:136:16
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/node_modules/graceful-fs/graceful-fs.js:57:14
+      at FSReqCallback.oncomplete (fs.js:159:23)
+  From previous event:
+      at /Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/bin/serverless.js:82:8
+      at processImmediate (internal/timers.js:456:21)
+      at process.topLevelDomainCallback (domain.js:137:15)
+  From previous event:
+      at Object.<anonymous> (/Users/user/.nvm/versions/node/v13.11.0/lib/node_modules/serverless/bin/serverless.js:71:4)
+      at Module._compile (internal/modules/cjs/loader.js:1147:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+      at Module.load (internal/modules/cjs/loader.js:996:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+      at internal/main/run_main_module.js:17:47
+
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+
+  Your Environment Information ---------------------------
+     Operating System:          darwin
+     Node Version:              13.11.0
+     Framework Version:         1.66.0
+     Plugin Version:            3.5.0
+     SDK Version:               2.3.0
+     Components Version:        2.22.3

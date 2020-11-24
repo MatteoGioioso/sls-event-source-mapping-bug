@@ -1,0 +1,28 @@
+service: sls-event-source-mapping-bug
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  timeout: 900
+  region: ap-southeast-1
+
+package:
+  individually: true
+
+resources:
+  Resources:
+    buggedKinesis:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: buggedKinesis
+        ShardCount: 1
+
+functions:
+  buggedFunction:
+    handler: services/handler.default
+    events:
+      - stream:
+          arn: arn:aws:kinesis:ap-southeast-1:024150966935:stream/buggedKinesis
+          batchSize: 100
+          # To reproduce the bug just uncomment the starting position to trigger a replacement
+#          startingPosition: LATEST
