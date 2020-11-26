@@ -22,7 +22,7 @@ functions:
     handler: services/handler.default
     events:
       - stream:
-          arn: arn:aws:kinesis:ap-southeast-1:024150966935:stream/buggedKinesis
+          arn: arn:aws:kinesis:ap-southeast-1:0000000000:stream/buggedKinesis
           batchSize: 100
           # To reproduce the bug just uncomment the starting position to trigger a replacement
 #          startingPosition: LATEST
