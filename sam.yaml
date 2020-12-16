@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+Description: sls-bug-eventsource-mappings
+
+Resources:
+  buggedKinesis:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      Name: buggedKinesis-sam
+      ShardCount: 1
+
+  buggedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      MemorySize: 128
+      Timeout: 30
+      Runtime: nodejs12.x
+      CodeUri: services/
+      Handler: handler.handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        KinesisEvent:
+          Type: Kinesis
+          Properties:
+            Stream: !GetAtt buggedKinesis.Arn
+            StartingPosition: TRIM_HORIZON # To trigger the bug change this to LATEST
+            BatchSize: 10
+
+
